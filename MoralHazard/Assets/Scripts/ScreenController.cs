@@ -70,9 +70,9 @@ public class ScreenController : MonoBehaviour
             // テキストを読み終わった後の処理
             if (text_index >= speaches.GetLength(0) - 1)
             {
-                if (StoryController.getStoryState() == "" && StoryController.getQuizState() == "")
+                if (StoryController.getEndState() != "")
                 {
-
+                    SceneManager.LoadScene("EndScene");
                 }
                 else if (StoryController.getQuizState() == "")
                 {

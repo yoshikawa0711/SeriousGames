@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class StoryController : MonoBehaviour
 {
@@ -74,20 +75,20 @@ public class StoryController : MonoBehaviour
         {"俺｢待ってるんだけど？｣", "living", "wife"},
         {"妻｢...ご飯？今作ってるから｣", "living", "wife"},
         {"俺｢ビールだよ、何で気づかないかな｣", "living", "wife"},
-        {"俺｢俺がここに座った時点で飲むってわかるでしょ？つまみの1つも出さないで飯も作れないとかお前家で何してんの？", "living", "wife"},
+        {"俺｢俺がここに座った時点で飲むってわかるでしょ？」", "living", "wife"},
+        {"俺｢つまみの1つも出さないで飯も作れないとかお前家で何してんの？」", "living", "wife"},
         {"俺｢家事できないなら仕事辞めれば？｣", "living", "wife"},
         {"妻(私はお前の奴隷じゃねーよ！！！！てかお前の収入私の半分だろが！！)", "living", "wife"},
         {"妻(私が仕事辞めたらどうやって食っていくんだよ！！！)", "living", "wife"},
         {"妻(共働きなのに家事は全部私がやらなきゃいけないのおかしいだろが！！！)", "living", "wife"},
         {"妻｢もう無理。離婚しよう。｣", "living", "wife"},
         {"妻｢あんたの存在を見るだけでウンザリする。｣", "living", "wife"},
-        {"妻は出ていった。働かせてやってる立場で何が不満なのか、全く理解できなかった。", "living", "none"},
-        {"バッドエンド1 ｢察してちゃんモラタイプ｣", "living", "none"},
+        {"妻は出ていった。働かせてやってる立場で何が不満なのか、全く理解できなかった。", "living", "none"}
     };
 
     private static string story_state = "opening";
     private static string quiz_state = "opening";
-
+    private static string end_state = "";
     private static int stress = 70;
 
     void Start()
@@ -148,6 +149,7 @@ public class StoryController : MonoBehaviour
                 else if (quiz_state == "comment_bear_ans3")
                 {
                     quiz_state = "";
+                    end_state = "sasshite";
                     return comment_bear_ans3;
                 }
 
@@ -198,6 +200,11 @@ public class StoryController : MonoBehaviour
         return quiz_state;
     }
 
+    public static string getEndState()
+    {
+        return end_state;
+    }
+
     public static int getStress()
     {
         return stress;
@@ -207,5 +214,6 @@ public class StoryController : MonoBehaviour
     {
         stress += plus;
     }
+
 
 }

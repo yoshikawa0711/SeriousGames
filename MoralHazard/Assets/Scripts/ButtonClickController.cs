@@ -7,28 +7,30 @@ public class ButtonClickController : MonoBehaviour
 {
     void Start()
     {
-        
+
     }
 
     void Update()
     {
-        
+
     }
 
-    public void OnClick() {
+    public void OnClick()
+    {
         /* ストーリー状態を更新 */
-        TextController.setStoryState("comment_opening"); 
+        StoryController.setStoryState("comment_opening");
 
         /* クイズの解答状態を更新してストーリーを読み込む */
-        switch(this.gameObject.name) {
+        switch (this.gameObject.name)
+        {
             case "Answer":
-                TextController.setQuizState(TextController.getStoryState() + "_ans1");
+                StoryController.setQuizState(StoryController.getStoryState() + "_ans1");
                 break;
             case "Answer (1)":
-                TextController.setQuizState(TextController.getStoryState() + "_ans2"); 
+                StoryController.setQuizState(StoryController.getStoryState() + "_ans2");
                 break;
             case "Answer (2)":
-                TextController.setQuizState(TextController.getStoryState() + "_ans3");   
+                StoryController.setQuizState(StoryController.getStoryState() + "_ans3");
                 break;
             default:
                 Debug.Log("クイズボタン名エラー");
