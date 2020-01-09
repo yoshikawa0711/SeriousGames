@@ -7,7 +7,10 @@ public class StartButtonController : MonoBehaviour
 {
     void Start()
     {
-
+        StoryController.setStoryState("opening");
+        StoryController.setQuizState("opening");
+        StoryController.setEndState("");
+        StoryController.setEndState("");
     }
 
     void Update()

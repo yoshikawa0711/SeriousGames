@@ -11,7 +11,7 @@ public class QuizController : MonoBehaviour
 
     void Start()
     {
-        string[ , ] answers = StoryController.getAnswers();
+        string[,] answers = StoryController.getAnswers();
         /* ボタンに選択肢を反映 */
         answer1_object.GetComponentInChildren<Text>().text = answers[0, 0];
         answer2_object.GetComponentInChildren<Text>().text = answers[1, 0];
@@ -21,7 +21,7 @@ public class QuizController : MonoBehaviour
 
     void Update()
     {
-        
+
     }
 
 }

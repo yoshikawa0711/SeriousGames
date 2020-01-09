@@ -18,6 +18,9 @@ public class EndCaseController : MonoBehaviour
             case "sasshite":
                 end_text.text = "｢察してちゃんモラタイプ｣";
                 break;
+            case "kodomo":
+                end_text.text = "｢旦那は大きい子供ですモラタイプ｣";
+                break;
             default:
                 end_text.text = "モラ夫タイプ";
                 Debug.Log("エンディングエラー");

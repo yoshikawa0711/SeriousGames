@@ -20,13 +20,13 @@ public class ScreenController : MonoBehaviour
 
     void Start()
     {
+        /* 背景の設定 */
         change_background = background_object.GetComponent<Image>();
         change_person = person_object.GetComponent<Image>();
 
+        /* テキストの設定 */
         speaches = StoryController.getSpeaches();
         text_index = 0;
-
-        Debug.Log("妻のストレス: " + StoryController.getStress());
     }
 
     void Update()
@@ -70,9 +70,17 @@ public class ScreenController : MonoBehaviour
             // テキストを読み終わった後の処理
             if (text_index >= speaches.GetLength(0) - 1)
             {
-                if (StoryController.getEndState() != "")
+                string end_status;
+                if ((end_status = StoryController.getEndState()) != "")
                 {
-                    SceneManager.LoadScene("EndScene");
+                    if (end_status == "normal")
+                    {
+                        SceneManager.LoadScene("NormalEndScene");
+                    }
+                    else
+                    {
+                        SceneManager.LoadScene("EndScene");
+                    }
                 }
                 else if (StoryController.getQuizState() == "")
                 {
