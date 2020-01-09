@@ -9,11 +9,14 @@ public class ScreenController : MonoBehaviour
     public GameObject speach_object = null;
     public GameObject background_object = null;
     public GameObject person_object = null;
+    public GameObject name_text_obj = null;
+    public GameObject name_windows_obj = null;
     private Image change_background;
     private Image change_person;
     public Sprite living_sprite = null;
     public Sprite entrance_sprite = null;
     public Sprite wife_sprite = null;
+    private Text name;
 
     private int text_index = 0;
     private string[,] speaches;
@@ -27,16 +30,35 @@ public class ScreenController : MonoBehaviour
         /* テキストの設定 */
         speaches = StoryController.getSpeaches();
         text_index = 0;
+
+        name = name_text_obj.GetComponent<Text>();
+
     }
 
     void Update()
     {
         /* テキストを進めるための処理 */
         Text speach_text = speach_object.GetComponent<Text>();
-        speach_text.text = speaches[text_index, 0];
+        speach_text.text = speaches[text_index, 1];
+
+        /* 名前を表示するための処理 */
+        switch (speaches[text_index, 0])
+        {
+            case "妻":
+            case "俺":
+                name_text_obj.SetActive(true);
+                name_windows_obj.SetActive(true);
+                name.text = speaches[text_index, 0];
+                break;
+            default:
+                name_text_obj.SetActive(false);
+                name_windows_obj.SetActive(false);
+                break;
+
+        }
 
         /* 人物を変更するための処理 */
-        switch (speaches[text_index, 2])
+        switch (speaches[text_index, 3])
         {
             case "none":
                 person_object.SetActive(false);
@@ -51,7 +73,7 @@ public class ScreenController : MonoBehaviour
         }
 
         /* 背景を変更するための処理 */
-        switch (speaches[text_index, 1])
+        switch (speaches[text_index, 2])
         {
             case "entrance":
                 change_background.sprite = entrance_sprite;
@@ -67,6 +89,7 @@ public class ScreenController : MonoBehaviour
         /* クリックをしたときの処理 */
         if (Input.GetMouseButtonDown(0))
         {
+
             // テキストを読み終わった後の処理
             if (text_index >= speaches.GetLength(0) - 1)
             {
