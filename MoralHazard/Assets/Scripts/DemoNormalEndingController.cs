@@ -4,12 +4,25 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class NormalEndingController : MonoBehaviour
+public class DemoNormalEndingController : MonoBehaviour
 {
     public GameObject score_text_obj;
     public GameObject text_obj;
     void Start()
     {
+        StoryController.resetStress();
+        StoryController.addStress(-20);
+    }
+
+    void Update()
+    {
+        /* クリックをしたときの処理 */
+        if (Input.GetMouseButtonDown(0))
+        {
+            Debug.Log("ストレスを追加");
+            StoryController.addStress(30);
+        }
+
         int score = StoryController.getStress();
         score_text_obj.GetComponent<Text>().text = "あなたと1日暮らした妻のストレス度数は｢" + score + "点｣でした！";
 
@@ -27,15 +40,6 @@ public class NormalEndingController : MonoBehaviour
         else
         {
             text_obj.GetComponent<Text>().text = "ちょっとしたあなたの言動により、妻はストレスを日々募らせているかもしれません。\n自分の世話は自分でできるくらいの余裕を持ちましょう。";
-        }
-    }
-
-    void Update()
-    {
-        /* クリックをしたときの処理 */
-        if (Input.GetMouseButtonDown(0))
-        {
-            SceneManager.LoadScene("StartScene");
         }
     }
 }

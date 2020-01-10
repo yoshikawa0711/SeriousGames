@@ -16,7 +16,7 @@ public class ScreenController : MonoBehaviour
     public Sprite living_sprite = null;
     public Sprite entrance_sprite = null;
     public Sprite wife_sprite = null;
-    private Text name;
+    private Text name_text;
 
     private int text_index = 0;
     private string[,] speaches;
@@ -31,7 +31,7 @@ public class ScreenController : MonoBehaviour
         speaches = StoryController.getSpeaches();
         text_index = 0;
 
-        name = name_text_obj.GetComponent<Text>();
+        name_text = name_text_obj.GetComponent<Text>();
 
     }
 
@@ -48,7 +48,7 @@ public class ScreenController : MonoBehaviour
             case "俺":
                 name_text_obj.SetActive(true);
                 name_windows_obj.SetActive(true);
-                name.text = speaches[text_index, 0];
+                name_text.text = speaches[text_index, 0];
                 break;
             default:
                 name_text_obj.SetActive(false);
