@@ -14,6 +14,7 @@ public class AudioController : MonoBehaviour
     void Start()
     {
         audio_source = this.GetComponent<AudioSource>();
+        DontDestroyOnLoad(this);
 
     }
 
@@ -34,16 +35,19 @@ public class AudioController : MonoBehaviour
 
         if (score <= 30)
         {
+            audio_source.Stop();
             audio_source.clip = sound30;
             audio_source.Play();
         }
         else if (score >= 80)
         {
+            audio_source.Stop();
             audio_source.clip = sound80;
             audio_source.Play();
         }
         else
         {
+            audio_source.Stop();
             audio_source.clip = sound50;
             audio_source.Play();
         }
