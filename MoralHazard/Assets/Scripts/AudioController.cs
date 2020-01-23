@@ -9,12 +9,12 @@ public class AudioController : MonoBehaviour
     public AudioClip sound50;
     public AudioClip sound80;
     private AudioSource audio_source;
-    private int old_stress = 50;
+    private int old_stress = 0;
 
     void Start()
     {
         audio_source = this.GetComponent<AudioSource>();
-        DontDestroyOnLoad(this);
+        // DontDestroyOnLoad(this);
 
     }
 
@@ -35,21 +35,19 @@ public class AudioController : MonoBehaviour
 
         if (score <= 30)
         {
-            audio_source.Stop();
             audio_source.clip = sound30;
             audio_source.Play();
         }
         else if (score >= 80)
         {
-            audio_source.Stop();
             audio_source.clip = sound80;
             audio_source.Play();
         }
         else
         {
-            audio_source.Stop();
             audio_source.clip = sound50;
             audio_source.Play();
         }
     }
+
 }
