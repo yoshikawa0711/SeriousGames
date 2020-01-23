@@ -16,6 +16,8 @@ public class ScreenController : MonoBehaviour
     public Sprite living_sprite = null;
     public Sprite entrance_sprite = null;
     public Sprite wife_sprite = null;
+    public Sprite wife_angry_sprite = null;
+    public Sprite wife_sad_sprite = null;
     private Text name_text;
 
     private int text_index = 0;
@@ -66,6 +68,14 @@ public class ScreenController : MonoBehaviour
             case "wife":
                 person_object.SetActive(true);
                 change_person.sprite = wife_sprite;
+                break;
+            case "wife_angry":
+                person_object.SetActive(true);
+                change_person.sprite = wife_angry_sprite;
+                break;
+            case "wife_sad":
+                person_object.SetActive(true);
+                change_person.sprite = wife_sad_sprite;
                 break;
             default:
                 Debug.Log("キャラ画像表示エラー");
