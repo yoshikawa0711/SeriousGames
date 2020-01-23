@@ -537,6 +537,8 @@ MonoBehaviour:
   living_sprite: {fileID: 21300000, guid: 38302b68bab0f844e91fe947362b327d, type: 3}
   entrance_sprite: {fileID: 21300000, guid: f4e042681310e774f879612d4cbadcda, type: 3}
   wife_sprite: {fileID: 21300000, guid: 2dd267dc8d68ab14b9ccb16be3f524c3, type: 3}
+  wife_angry_sprite: {fileID: 21300000, guid: 3c0203bde74f7564dbdf5743fe63ff86, type: 3}
+  wife_sad_sprite: {fileID: 21300000, guid: 083fcceb7bc89894385bedafefa8866b, type: 3}
 --- !u!1 &488298075
 GameObject:
   m_ObjectHideFlags: 0
@@ -1112,7 +1114,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 955ba3c869c812b4ba79e9b339ce5135, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 0.3
   m_Pitch: 1

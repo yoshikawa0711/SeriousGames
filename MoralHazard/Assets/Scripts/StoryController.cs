@@ -24,7 +24,7 @@ public class StoryController : MonoBehaviour
 
     private static string[,] comment_opening_ans1 = {
         {"俺", "｢まだできてないの？俺が帰ってくる時間わかるよね？飯くらい用意しとけよ｣", "living", "wife"},
-        {"妻", "(こちとら仕事で疲れてるのにお前の帰宅時間を考える余裕ねぇよ…)", "living", "wife"},
+        {"妻", "(こちとら仕事で疲れてるのにお前の帰宅時間を考える余裕ねぇよ…)", "living", "wife_angry"},
         {"妻", "｢ごめんなさい、気をつけるね。｣", "living", "wife"}
     };
 
@@ -60,7 +60,7 @@ public class StoryController : MonoBehaviour
     private static string[,] comment_bear_ans2 = {
         {"妻", "｢自分で取ってよ｣", "living", "wife"},
         {"俺", "｢ついでに取ってくれても良いじゃん｣", "living", "wife"},
-        {"妻", "(何のついでだよ、今飯作ってるのわかんないの？？)", "living", "wife"},
+        {"妻", "(何のついでだよ、今飯作ってるのわかんないの？？)", "living", "wife_angry"},
         {"", "妻はビールを取ってくれた。", "living", "wife"},
         {"妻", "｢…はい。｣", "living", "wife"}
     };
@@ -79,11 +79,11 @@ public class StoryController : MonoBehaviour
         {"俺", "｢俺がここに座った時点で飲むってわかるでしょ？」", "living", "wife"},
         {"俺", "｢つまみの1つも出さないで飯も作れないとかお前家で何してんの？」", "living", "wife"},
         {"俺", "｢家事できないなら仕事辞めれば？｣", "living", "wife"},
-        {"妻", "(私はお前の奴隷じゃねーよ！！！！てかお前の収入私の半分だろが！！)", "living", "wife"},
-        {"妻", "(私が仕事辞めたらどうやって食っていくんだよ！！！)", "living", "wife"},
-        {"妻", "(共働きなのに家事は全部私がやらなきゃいけないのおかしいだろが！！！)", "living", "wife"},
-        {"妻", "｢もう無理。離婚しよう。｣", "living", "wife"},
-        {"妻", "｢あんたの存在を見るだけでウンザリする。｣", "living", "wife"},
+        {"妻", "(私はお前の奴隷じゃねーよ！！！！てかお前の収入私の半分だろが！！)", "living", "wife_angry"},
+        {"妻", "(私が仕事辞めたらどうやって食っていくんだよ！！！)", "living", "wife_angry"},
+        {"妻", "(共働きなのに家事は全部私がやらなきゃいけないのおかしいだろが！！！)", "living", "wife_angry"},
+        {"妻", "｢もう無理。離婚しよう。｣", "living", "wife_angry"},
+        {"妻", "｢あんたの存在を見るだけでウンザリする。｣", "living", "wife_angry"},
         {"", "妻は出ていった。働かせてやってる立場で何が不満なのか、全く理解できなかった。", "living", "none"}
     };
 
@@ -105,7 +105,7 @@ public class StoryController : MonoBehaviour
         {"妻", "｢チャーハン食べないの？？｣", "living", "wife"},
         {"俺", "｢...うん｣", "living", "wife"},
         {"妻", "「...｣", "living", "wife"},
-        {"妻", "(食べないなら作らせるなよ！！！！！)", "living", "wife"}
+        {"妻", "(食べないなら作らせるなよ！！！！！)", "living", "wife_angry"}
     };
 
     private static string[,] comment_diner_ans2 = {
@@ -123,9 +123,9 @@ public class StoryController : MonoBehaviour
         {"俺", "｢しかもこれ冷凍でしょ？俺に冷凍食べさせる気？俺を殺そうとしてんの？｣", "living", "wife"},
         {"妻", "｢...ごめん。｣", "living", "wife"},
         {"妻", "｢じゃあもう自分で作ってよ！！！｣", "living", "wife"},
-        {"", "妻は泣き出した。", "living", "wife"},
-        {"妻", "｢何で共働きなのに私に家事全部押し付けるの！！？もう無理！！！｣", "living", "wife"},
-        {"妻", "｢実家に帰ってママに手料理食べさせてもらえば？｣", "living", "wife"},
+        {"", "妻は泣き出した。", "living", "wife_sad"},
+        {"妻", "｢何で共働きなのに私に家事全部押し付けるの！！？もう無理！！！｣", "living", "wife_angry"},
+        {"妻", "｢実家に帰ってママに手料理食べさせてもらえば？｣", "living", "wife_angry"},
         {"妻", "｢さよなら｣", "living", "wife"},
         {"", "妻は出ていった。妻の役割を放棄しておいて逆ギレした妻が1つも理解できなかった。", "living", "none"}
     };
